@@ -15,22 +15,26 @@ public class ProductServiceImpl implements ProductService {
 	ProductRepository repository;
 
 	@Override
+	//retrieve products data from repository
 	public List<Product> getProducts() {
 		return repository.findAll();
 	}
 
 	@Override
+	//retrieve product data from repository
 	public Product getProduct(int id) {
 		return repository.findById(id).get();
 	}
 
 	@Override
+	//save the product details into database
 	public Response createProduct(Product product) {
 		Product saveProduct=repository.save(product);
 		return Response.ok(saveProduct).build();
 	}
 
 	@Override
+	//update the product details in database
 	public Response updateProduct(Product product) {
 		Product saveProduct=repository.save(product);
 		return Response.ok(saveProduct).build();
